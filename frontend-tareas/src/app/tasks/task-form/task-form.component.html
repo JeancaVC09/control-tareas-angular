@@ -1,0 +1,26 @@
+<div class="container mt-4" style="max-width: 500px;">
+  <h2>{{ editando ? 'Editar Tarea' : 'Nueva Tarea' }}</h2>
+
+  <form (ngSubmit)="guardar()">
+    <div class="mb-3">
+      <label>Título</label>
+      <input type="text" class="form-control" [(ngModel)]="tarea.titulo" name="titulo" required />
+    </div>
+
+    <div class="mb-3">
+      <label>Descripción</label>
+      <textarea class="form-control" [(ngModel)]="tarea.descripcion" name="descripcion"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Estado</label>
+      <select class="form-control" [(ngModel)]="tarea.estado" name="estado">
+        <option value="pendiente">Pendiente</option>
+        <option value="en progreso">En Progreso</option>
+        <option value="completada">Completada</option>
+      </select>
+    </div>
+
+    <button class="btn btn-success w-100" type="submit">Guardar</button>
+  </form>
+</div>
